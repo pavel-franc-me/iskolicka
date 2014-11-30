@@ -13,7 +13,6 @@ Ext.define('iskolicka.controller.Main', {
     },
 
     showDetail: function(list, record) {
-        console.log('Record = %o', record.getData());
         this.getMain().push({
             xtype: 'lessondetail',
             data: record.getData()
