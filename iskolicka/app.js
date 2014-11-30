@@ -13,15 +13,21 @@
 Ext.application({
     name: 'iskolicka',
 
+    controllers: ['Main'],
+    views: ['Main'],
+    //stores:
+    //models:
+
+
+
+
     requires: [
         'Ext.MessageBox',
         'Ext.TitleBar',
         'Ext.Video'
     ],
 
-    views: [
-        'Main'
-    ],
+
 
     icon: {
         '57': 'resources/icons/Icon.png',
@@ -46,10 +52,10 @@ Ext.application({
         Ext.fly('appLoadingIndicator').destroy();
 
         // Initialize the main view
-        //Ext.Viewport.add(Ext.create('iskolicka.view.Main'));
-        //Ext.Viewport.add(Ext.create('iskolicka.view.Search'));
-        var listConfiguration = this.getListConfiguration();
-        Ext.Viewport.add(listConfiguration);
+        Ext.Viewport.add(Ext.create('iskolicka.view.Main'));
+        //Ext.Viewport.add(Ext.create('iskolicka.view.LessonList'));
+        //var listConfiguration = this.getListConfiguration();
+        //Ext.Viewport.add(listConfiguration);
 
     },
 

@@ -1,6 +1,6 @@
 <?
-$conn_user = "iskolicka";
-$conn_pass = "hafr3254";
+$conn_user = "root";
+$conn_pass = "a";
 $conn_server = "localhost";
 
 $dbf = "iskolicka";
@@ -13,13 +13,26 @@ if(!$cn)
 mysql_select_db($dbf);
 mysql_query("SET sql_mode = ''");
 mysql_query("SET NAMES utf8");
-$rs = mysql_query("select * from english_podcast where upper=1 order by kod desc");
-while($z = mysql_fetch_array($rs))
+if(isset($_GET["id"]))
 {
-    $text[] = array("firstName"=>$z["kod"],"lastName"=>$z["name"]);
+    $rs = mysql_query("select * from english_podcast where kod=".$_GET["id"]);
+    $z = mysql_fetch_array($rs);
+    $result = $z["text"];
+
+}
+else
+{
+    $rs = mysql_query("select * from english_podcast where upper=1 order by kod desc");
+    while($z = mysql_fetch_array($rs))
+    {
+        $text[] = array("firstName"=>$z["kod"],"lastName"=>$z["name"]);
+    }
+    $result = json_encode($text);
+
 }
 header('Access-Control-Allow-Origin: *');
-echo json_encode($text);
+echo $result;
+
 
 
 ?>
