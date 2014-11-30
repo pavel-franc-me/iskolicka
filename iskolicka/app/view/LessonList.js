@@ -23,7 +23,7 @@ Ext.define('iskolicka.view.LessonList', {
                         placeHolder: 'Search...',
                         listeners: {
                             clearicontap: function() {
-                                this.up('LessonList').onSearchClearIconTap();
+                                this.up('lessonlist').onSearchClearIconTap();
                             },
                             keyup: function() {
                                 this.up('lessonlist').onSearchKeyUp(this);
