@@ -1,6 +1,6 @@
 <?
-$conn_user = "root";
-$conn_pass = "a";
+$conn_user = "iskolicka";
+$conn_pass = "hafr3254";
 $conn_server = "localhost";
 
 $dbf = "iskolicka";
