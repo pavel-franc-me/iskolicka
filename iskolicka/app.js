@@ -15,7 +15,7 @@ Ext.application({
 
     controllers: ['Main'],
     views: ['Main'],
-    //stores:
+    stores: ['LessonList'],
     //models:
 
 

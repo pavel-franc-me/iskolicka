@@ -12,20 +12,31 @@ Ext.define('iskolicka.view.LessonDetail', {
     },
 
     initialize: function() {
-        this.setTitle(this.config.data["lastName"]);
-        this.setHtml(getDetail(this.config.data["firstName"]));
+        this.setTitle(this.getData().lastName);
+        this.setHtml(getDetail(this.getData().firstName));
     }
 });
 
 
 function getDetail(id) {
+    Ext.data.aj
     var result =  $.ajax({
         url:"http://mobile.iskolicka.cz/script/ajaxScript.php?id="+id,
         dataType: 'html',
         async: false
     }).responseText;
-    console.log('----------------- Result -----------------Result=%o', result)
     return result;
-   //return "ahoj";
 }
+/*
+var ajax = Ext.Ajax.request({
+        url: 'ajax_demo/sample.json',
+        success: function(response, opts) {
+            var obj = Ext.decode(response.responseText);
+                console.dir(obj);
+        },
+        failure: function(response, opts) {
+            console.log('server-side failure with status code ' + response.status);
+        }
+    });
+*/
 
