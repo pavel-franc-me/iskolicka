@@ -3,29 +3,28 @@ Ext.define('iskolicka.view.LessonDetail', {
     xtype: 'lessondetail',
 
     config: {
-        title: 'Details',
+        title: 'Hello!',
         styleHtmlContent: true,
         scrollable: 'vertical',
         tpl: [
             'Hello {lastName}!'
         ]
-
     },
 
     initialize: function() {
-        console.log('----------------- Initialized -----------------Result=%o', this);
-        this.setHtml(getDetail(70));
+        this.setTitle(this.config.data["lastName"]);
+        this.setHtml(getDetail(this.config.data["firstName"]));
     }
 });
 
 
 function getDetail(id) {
     var result =  $.ajax({
-        url:"script/ajaxScript.php?id="+id,
+        url:"http://mobile.iskolicka.cz/script/ajaxScript.php?id="+id,
         dataType: 'html',
         async: false
     }).responseText;
-    console.log("Result=%o", result);
+    console.log('----------------- Result -----------------Result=%o', result)
     return result;
    //return "ahoj";
 }
