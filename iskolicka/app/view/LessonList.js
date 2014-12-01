@@ -1,9 +1,15 @@
+/**
+ * List view with filter edit. It's displaying list aof all lessons
+ * The list can be filtered by filter field. When user click in one list
+ * item, the corresponding lesson is opened
+ */
 Ext.define('iskolicka.view.LessonList', {
     extend: 'Ext.dataview.List',
     xtype: 'lessonlist',
+
     requires: [
-        'Ext.TitleBar',
-        'Ext.Video'
+        'Ext.Toolbar',
+        'Ext.field.Search'
     ],
     config: {
         ui: 'round',
@@ -26,7 +32,7 @@ Ext.define('iskolicka.view.LessonList', {
                                 this.up('lessonlist').onSearchClearIconTap();
                             },
                             keyup: function() {
-                                this.up('lessonlist').onSearchKeyUp(this);
+                                this.up('lessonlist').onSearchKeyUp(this.getValue());
                             }
                         }
                     },
@@ -35,9 +41,12 @@ Ext.define('iskolicka.view.LessonList', {
             }
         ]
     },
-    onSearchKeyUp : function(field) {
-        var value = field.getValue(),
-            store = this.getStore();
+    /**
+     * New character has been entered into filter field. We have set filter in data store
+     * @param value value in search text field
+     */
+    onSearchKeyUp : function(value) {
+        var store = this.getStore();
 
         store.clearFilter(!!value);
 
@@ -63,8 +72,10 @@ Ext.define('iskolicka.view.LessonList', {
             });
         }
     },
+    /**
+     * User clicked to clear filter button. We have clear filter in data store
+     */
     onSearchClearIconTap: function() {
         this.getStore().clearFilter();
     }
-
 });
