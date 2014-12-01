@@ -13,30 +13,20 @@ Ext.define('iskolicka.view.LessonDetail', {
 
     initialize: function() {
         this.setTitle(this.getData().lastName);
-        this.setHtml(getDetail(this.getData().firstName));
+        this.request(this.getData().firstName);
+    },
+
+    request : function(id) {
+        var me = this;
+        $.ajax({
+            url:"http://mobile.iskolicka.cz/script/ajaxScript.php?id="+id,
+            dataType: 'html',
+            success : function(result) {
+                me.setHtml(result);
+            },
+            error: function(x, y) {
+                console.log('Cannot connect server ' + y);
+            }
+        });
     }
 });
-
-
-function getDetail(id) {
-    Ext.data.aj
-    var result =  $.ajax({
-        url:"http://mobile.iskolicka.cz/script/ajaxScript.php?id="+id,
-        dataType: 'html',
-        async: false
-    }).responseText;
-    return result;
-}
-/*
-var ajax = Ext.Ajax.request({
-        url: 'ajax_demo/sample.json',
-        success: function(response, opts) {
-            var obj = Ext.decode(response.responseText);
-                console.dir(obj);
-        },
-        failure: function(response, opts) {
-            console.log('server-side failure with status code ' + response.status);
-        }
-    });
-*/
-
