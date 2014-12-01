@@ -3,17 +3,19 @@ Ext.define('iskolicka.controller.Main', {
 
     config: {
         refs: {
-            main: 'mainpanel'
+            main: 'mainpanel',
+            lessonlist: 'lessonlist'
+
         },
         control: {
-            'lessonlist': {
-                disclose: 'showDetail'
+            lessonlist: {
+                itemtap: 'showDetail'
             }
         }
+
     },
 
-    showDetail: function(list, record) {
-        console.log('Record = %o', record.getData());
+    showDetail: function(list, index, item, record) {
         this.getMain().push({
             xtype: 'lessondetail',
             data: record.getData()
