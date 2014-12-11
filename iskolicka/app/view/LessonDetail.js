@@ -15,8 +15,13 @@ Ext.define('iskolicka.view.LessonDetail', {
                 initialize: function() {
                     console.log("console....%o",this)
                     this.setHtml("stranka 1");
+                },
+                listeners: {
+                    show: function() {
+                        var cnt = this.getParent().incrementCounter();
+                        this.setHtml('Detail - texty ' + cnt);
+                    }
                 }
-
             },
             {
                 title: 'Dictionary',
@@ -49,7 +54,4 @@ Ext.define('iskolicka.view.LessonDetail', {
         this.items.items[0].setHtml(this.detail(this.config.data["firstName"]));
 
     }
-
-
-
 });
