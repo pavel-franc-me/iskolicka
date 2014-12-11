@@ -1,13 +1,14 @@
 Ext.define('iskolicka.view.LessonDetail', {
     extend: 'Ext.tab.Panel',
     xtype: 'lessondetail',
-    text1: 'blabla',
+
     config: {
         fullscreen: true,
         tabBarPosition: 'bottom',
 
         items: [
             {
+                dataLoaded : false,
                 title: 'Detail',
                 iconCls: 'home',
                 html: 'Detail - texty',
@@ -18,8 +19,10 @@ Ext.define('iskolicka.view.LessonDetail', {
                 },
                 listeners: {
                     show: function() {
-                        var cnt = this.getParent().incrementCounter();
-                        this.setHtml('Detail - texty ' + cnt);
+                        if(!this.dataLoaded) {
+                            this.setHtml(this.getParent().getText());
+                            this.dataLoaded = true;
+                        }
                     }
                 }
             },
@@ -49,9 +52,7 @@ Ext.define('iskolicka.view.LessonDetail', {
          }).responseText;
          return result;
     },
-    initialize: function() {
-        console.log("parent....%o",this.items.items[0].html)
-        this.items.items[0].setHtml(this.detail(this.config.data["firstName"]));
-
+    getText : function() {
+        return this.detail(this.config.data["firstName"]);
     }
 });
