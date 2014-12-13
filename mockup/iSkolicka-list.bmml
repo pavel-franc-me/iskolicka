@@ -34,5 +34,10 @@
         <icon>HomeMobileIcon%7Csmall</icon>
       </controlProperties>
     </control>
+    <control controlID="7" controlTypeID="com.balsamiq.mockups::Icon" x="292" y="534" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>Info2Icon%7Csmall</icon>
+      </controlProperties>
+    </control>
   </controls>
 </mockup>
