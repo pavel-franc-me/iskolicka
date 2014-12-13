@@ -11,12 +11,7 @@
         <text>iSkolicka</text>
       </controlProperties>
     </control>
-    <control controlID="6" controlTypeID="com.balsamiq.mockups::Icon" x="123" y="534" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="2" locked="false" isInGroup="-1">
-      <controlProperties>
-        <icon>HomeMobileIcon%7Csmall</icon>
-      </controlProperties>
-    </control>
-    <control controlID="7" controlTypeID="com.balsamiq.mockups::PointyButton" x="188" y="442" w="-1" h="-1" measuredW="62" measuredH="27" zOrder="3" locked="false" isInGroup="-1">
+    <control controlID="7" controlTypeID="com.balsamiq.mockups::PointyButton" x="188" y="442" w="-1" h="-1" measuredW="62" measuredH="27" zOrder="2" locked="false" isInGroup="-1">
       <controlProperties>
         <borderStyle>none</borderStyle>
         <direction>right</direction>
@@ -26,17 +21,17 @@
         <text>Login</text>
       </controlProperties>
     </control>
-    <control controlID="8" controlTypeID="com.balsamiq.mockups::TextInput" x="158" y="370" w="140" h="-1" measuredW="43" measuredH="24" zOrder="4" locked="false" isInGroup="-1">
+    <control controlID="8" controlTypeID="com.balsamiq.mockups::TextInput" x="158" y="370" w="140" h="-1" measuredW="43" measuredH="24" zOrder="3" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Heslo</text>
       </controlProperties>
     </control>
-    <control controlID="9" controlTypeID="com.balsamiq.mockups::TextInput" x="158" y="317" w="140" h="-1" measuredW="58" measuredH="24" zOrder="5" locked="false" isInGroup="-1">
+    <control controlID="9" controlTypeID="com.balsamiq.mockups::TextInput" x="158" y="317" w="140" h="-1" measuredW="58" measuredH="24" zOrder="4" locked="false" isInGroup="-1">
       <controlProperties>
         <text>U%u017Eivatel</text>
       </controlProperties>
     </control>
-    <control controlID="11" controlTypeID="com.balsamiq.mockups::Icon" x="292" y="534" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="6" locked="false" isInGroup="-1">
+    <control controlID="11" controlTypeID="com.balsamiq.mockups::Icon" x="292" y="534" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="5" locked="false" isInGroup="-1">
       <controlProperties>
         <icon>Info2Icon%7Csmall</icon>
       </controlProperties>
