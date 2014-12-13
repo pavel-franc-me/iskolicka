@@ -1,0 +1,73 @@
+<mockup version="1.0" skin="wireframe" fontFace="Balsamiq Sans" measuredW="342" measuredH="591" mockupW="282" mockupH="573">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::iPhone" x="60" y="18" w="-1" h="-1" measuredW="282" measuredH="573" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <model>IPhone5</model>
+      </controlProperties>
+    </control>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::ButtonBar" x="85" y="149" w="232" h="27" measuredW="207" measuredH="21" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%3C-%20P%u0159edchoz%ED%2C%20N%E1sleduj%EDc%ED%20-%3E</text>
+      </controlProperties>
+    </control>
+    <control controlID="4" controlTypeID="com.balsamiq.mockups::iPhoneKeyboard" x="87" y="326" w="-1" h="-1" measuredW="226" measuredH="160" zOrder="2" locked="false" isInGroup="-1"/>
+    <control controlID="6" controlTypeID="com.balsamiq.mockups::Label" x="98" y="186" w="-1" h="-1" measuredW="38" measuredH="21" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Czech</text>
+      </controlProperties>
+    </control>
+    <control controlID="7" controlTypeID="com.balsamiq.mockups::Label" x="151" y="186" w="145" h="-1" measuredW="105" measuredH="21" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Nejlep%u0161%ED%20na%20sv%u011Bt%u011B</text>
+      </controlProperties>
+    </control>
+    <control controlID="8" controlTypeID="com.balsamiq.mockups::Label" x="98" y="207" w="-1" h="-1" measuredW="43" measuredH="21" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>English</text>
+      </controlProperties>
+    </control>
+    <control controlID="9" controlTypeID="com.balsamiq.mockups::TextInput" x="148" y="205" w="129" h="-1" measuredW="75" measuredH="24" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>The%20best%20...</text>
+      </controlProperties>
+    </control>
+    <control controlID="10" controlTypeID="com.balsamiq.mockups::Label" x="98" y="238" w="179" h="-1" measuredW="69" measuredH="21" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Spr%E1vn%u011B%2012</text>
+      </controlProperties>
+    </control>
+    <control controlID="11" controlTypeID="com.balsamiq.mockups::Label" x="98" y="264" w="-1" h="-1" measuredW="49" measuredH="21" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Chyba%205</text>
+      </controlProperties>
+    </control>
+    <control controlID="12" controlTypeID="com.balsamiq.mockups::Label" x="98" y="290" w="-1" h="-1" measuredW="56" measuredH="21" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Zb%FDv%E1%2010</text>
+      </controlProperties>
+    </control>
+    <control controlID="15" controlTypeID="com.balsamiq.mockups::ButtonBar" x="85" y="485" w="232" h="27" measuredW="216" measuredH="21" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <hrefs>iskolicka-detail%26bm%3Biskolicka-detail.bmml%26bm%3Biskolicka-detail.bmml%26bm%3Biskolicka-detail.bmml%2CiSkolicka-dictionary%26bm%3BiSkolicka-dictionary.bmml%26bm%3BiSkolicka-dictionary.bmml%26bm%3BiSkolicka-dictionary.bmml%2C</hrefs>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%2225%2C467%2C86%2C494%22%20href%3D%22iskolicka-detail.bmml%22%20alt%3D%22iskolicka-detail%22%20id%3D%2215%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%2286%2C467%2C173%2C494%22%20href%3D%22iSkolicka-dictionary.bmml%22%20alt%3D%22iSkolicka-dictionary%22%20id%3D%2215%22/%3E</map>
+        <selectedIndex>2</selectedIndex>
+        <text>Texty%2C%20Slovn%ED%u010Dek%2C%20Zkou%u0161en%ED</text>
+      </controlProperties>
+    </control>
+    <control controlID="16" controlTypeID="com.balsamiq.mockups::PieChart" x="184" y="245" w="112" h="66" measuredW="180" measuredH="180" zOrder="11" locked="false" isInGroup="-1"/>
+    <control controlID="17" controlTypeID="com.balsamiq.mockups::Label" x="158" y="119" w="-1" h="-1" measuredW="82" measuredH="21" zOrder="12" locked="false" isInGroup="-1">
+      <controlProperties>
+        <align>center</align>
+        <color>0</color>
+        <text>Lesson%20Name</text>
+      </controlProperties>
+    </control>
+    <control controlID="18" controlTypeID="com.balsamiq.mockups::Icon" x="91" y="119" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="13" locked="false" isInGroup="-1">
+      <controlProperties>
+        <href>iSkolicka-list%26bm%3BiSkolicka-list.bmml%26bm%3BiSkolicka-list.bmml%26bm%3BiSkolicka-list.bmml</href>
+        <icon>LeftArrowIcon%7Csmall</icon>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%2231%2C101%2C55%2C125%22%20href%3D%22iSkolicka-list.bmml%22%20alt%3D%22iSkolicka-list%22%20id%3D%2218%22/%3E</map>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

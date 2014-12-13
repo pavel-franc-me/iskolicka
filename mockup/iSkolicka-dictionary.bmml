@@ -1,0 +1,38 @@
+<mockup version="1.0" skin="wireframe" fontFace="Balsamiq Sans" measuredW="363" measuredH="654" mockupW="282" mockupH="573">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::iPhone" x="81" y="81" w="-1" h="-1" measuredW="282" measuredH="573" zOrder="0" locked="true" isInGroup="-1">
+      <controlProperties>
+        <model>IPhone5</model>
+      </controlProperties>
+    </control>
+    <control controlID="5" controlTypeID="com.balsamiq.mockups::Label" x="181" y="191" w="-1" h="-1" measuredW="82" measuredH="21" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <align>center</align>
+        <color>0</color>
+        <text>Lesson%20Name</text>
+      </controlProperties>
+    </control>
+    <control controlID="7" controlTypeID="com.balsamiq.mockups::ButtonBar" x="119" y="542" w="-1" h="-1" measuredW="202" measuredH="21" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <hrefs>iSkolicka-detail%26bm%3BiSkolicka-detail.bmml%26bm%3BiSkolicka-detail.bmml%26bm%3BiSkolicka-detail.bmml%2C%2CiSkolicka-test%26bm%3BiSkolicka-test.bmml%26bm%3BiSkolicka-test.bmml%26bm%3BiSkolicka-test.bmml</hrefs>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%2238%2C461%2C88%2C482%22%20href%3D%22iSkolicka-detail.bmml%22%20alt%3D%22iSkolicka-detail%22%20id%3D%227%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22162%2C461%2C240%2C482%22%20href%3D%22iSkolicka-test.bmml%22%20alt%3D%22iSkolicka-test%22%20id%3D%227%22/%3E</map>
+        <selectedIndex>1</selectedIndex>
+        <text>Text%2C%20Slov%ED%u010Dka%2C%20Zkou%u0161en%ED</text>
+      </controlProperties>
+    </control>
+    <control controlID="10" controlTypeID="com.balsamiq.mockups::Icon" x="114" y="191" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <href>iSkolicka-list%26bm%3BiSkolicka-list.bmml%26bm%3BiSkolicka-list.bmml%26bm%3BiSkolicka-list.bmml</href>
+        <icon>LeftArrowIcon%7Csmall</icon>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%2233%2C110%2C57%2C134%22%20href%3D%22iSkolicka-list.bmml%22%20alt%3D%22iSkolicka-list%22%20id%3D%2210%22/%3E</map>
+      </controlProperties>
+    </control>
+    <control controlID="12" controlTypeID="com.balsamiq.mockups::DataGrid" x="118" y="220" w="203" h="314" measuredW="107" measuredH="108" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <alternateRowColor>15594478</alternateRowColor>
+        <rowHeight>30</rowHeight>
+        <text>Czech%2C%20English%0Aahoj%2C%20hallo%0Aden%2C%20day%0Adnes%2C%20today</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>
