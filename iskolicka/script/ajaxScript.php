@@ -15,10 +15,26 @@ mysql_query("SET sql_mode = ''");
 mysql_query("SET NAMES utf8");
 if(isset($_GET["id"]))
 {
-    $rs = mysql_query("select * from english_podcast where kod=".$_GET["id"]);
-    $z = mysql_fetch_array($rs);
-    $result = $z["text"];
-
+    switch($_GET["title"])
+    {
+        case "Detail":
+            $rs = mysql_query("select * from english_podcast where kod=".$_GET["id"]);
+            $z = mysql_fetch_array($rs);
+            $result = $z["text"];
+            break;
+        case "Dictionary":
+            $result = "<table>";
+            $rs = mysql_query("select * from english_dictionary_user where document=".$_GET["id"]);
+            while($z = mysql_fetch_array($rs))
+            {
+                $result .= "<tr><td style='width:50%'>".$z["cz"]."</td><td style='width:50%'>".$z["en"]."</td></tr>";
+            }
+            $result .= "</table>";
+            break;
+        case "Test":
+            break;
+        default:
+    }
 }
 else
 {

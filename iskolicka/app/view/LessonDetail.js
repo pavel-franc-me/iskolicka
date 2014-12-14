@@ -48,18 +48,19 @@ Ext.define('iskolicka.view.LessonDetail', {
 		if (page.dataLoaded) {
 			return;
 		}
-        page.setHtml(this.getText());
+        console.log("page ...%o",page);
+        page.setHtml(this.getText(page.title));
 		page.dataLoaded = true;
 	},
-	detail: function (id) {
+	detail: function (id,title) {
 		var result = $.ajax({
-			url: "http://mobile.iskolicka.cz/script/ajaxScript.php?id=" + id,
+			url: "http://mobile.iskolicka.cz/script/ajaxScript.php?id=" + id + "&title=" + title,
 			dataType: 'html',
 			async: false
 		}).responseText;
 		return result;
 	},
-	getText: function () {
-		return this.detail(this.config.data["firstName"]);
+	getText: function (title) {
+		return this.detail(this.config.data["firstName"],title);
 	}
 });
