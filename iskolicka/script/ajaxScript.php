@@ -27,7 +27,7 @@ if(isset($_GET["id"]))
             $rs = mysql_query("select * from english_dictionary_user where document=".$_GET["id"]);
             while($z = mysql_fetch_array($rs))
             {
-                $result .= "<tr><td style='width:50%'>".$z["cz"]."</td><td style='width:50%'>".$z["en"]."</td></tr>";
+                $result .= "<tr><td border='1' style='width:50%;height:50px;border:1 solid grey'>".$z["cz"]."</td><td style='width:50%'>".$z["en"]."</td></tr>";
             }
             $result .= "</table>";
             break;

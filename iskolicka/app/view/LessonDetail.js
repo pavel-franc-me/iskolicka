@@ -11,7 +11,6 @@ Ext.define('iskolicka.view.LessonDetail', {
 				dataLoaded: false,
 				title: 'Detail',
 				iconCls: 'home',
-				html: 'Detail - texty',
 				badgeText: 'Tip.',
 				listeners: {
 					show: function () {
@@ -22,10 +21,6 @@ Ext.define('iskolicka.view.LessonDetail', {
 			{
 				title: 'Dictionary',
 				iconCls: 'bookmarks',
-				html: 'Slovicka - slovní zásoba',
-				initialize: function () {
-					this.setHtml("stranka 2");
-				},
 				listeners: {
 					show: function () {
 						this.getParent().foo(this);
@@ -35,7 +30,6 @@ Ext.define('iskolicka.view.LessonDetail', {
 			{
 				title: 'Test',
 				iconCls: 'action',
-				html: 'Testovani - zkoušení slovíček',
 				listeners: {
 					show: function () {
 						this.getParent().foo(this);

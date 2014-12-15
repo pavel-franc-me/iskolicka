@@ -31,7 +31,9 @@
     </control>
     <control controlID="6" controlTypeID="com.balsamiq.mockups::Icon" x="123" y="534" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="4" locked="false" isInGroup="-1">
       <controlProperties>
+        <href>iSkolicka-login%26bm%3BiSkolicka-login.bmml%26bm%3BiSkolicka-login.bmml%26bm%3BiSkolicka-login.bmml</href>
         <icon>HomeMobileIcon%7Csmall</icon>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%2242%2C453%2C66%2C477%22%20href%3D%22iSkolicka-login.bmml%22%20alt%3D%22iSkolicka-login%22%20id%3D%226%22/%3E</map>
       </controlProperties>
     </control>
     <control controlID="7" controlTypeID="com.balsamiq.mockups::Icon" x="292" y="534" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="5" locked="false" isInGroup="-1">
