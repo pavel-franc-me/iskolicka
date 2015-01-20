@@ -14,7 +14,7 @@ Ext.define('iskolicka.view.LessonDetail', {
 				badgeText: 'Tip.',
 				listeners: {
 					show: function () {
-						this.getParent().foo(this);
+						this.getParent().loadData(this);
 					}
 				}
 			},
@@ -23,7 +23,7 @@ Ext.define('iskolicka.view.LessonDetail', {
 				iconCls: 'bookmarks',
 				listeners: {
 					show: function () {
-						this.getParent().foo(this);
+						this.getParent().loadData(this);
 					}
 				}
 			},
@@ -32,13 +32,13 @@ Ext.define('iskolicka.view.LessonDetail', {
 				iconCls: 'action',
 				listeners: {
 					show: function () {
-						this.getParent().foo(this);
+						this.getParent().loadData(this);
 					}
 				}
 			}
 		]
 	},
-	foo: function (page) {
+	loadData: function (page) {
 		if (page.dataLoaded) {
 			return;
 		}
