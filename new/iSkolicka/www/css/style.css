@@ -1,0 +1,57 @@
+/* Empty. Add your own CSS if you like */
+.red {
+	background-color: red;
+}
+
+.yellow {
+	background-color: yellow;
+}
+
+.green {
+	background-color: green;
+}
+
+.gray {
+	background-color: gray;
+}
+
+.no-wrap {
+	padding: 0 5px 0 5px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	/*white-space: nowrap;*/
+}
+
+.back-pict {
+	background-image: url("../img/Default-568h@2x.png");
+}
+
+.left-text {
+	float: left;
+	width: 50%;
+}
+
+.right-text {
+	float: right;
+	width: 50%;
+ }
+
+.text-red {
+	color: red;
+}
+
+.text-green {
+	color: green;
+}
+
+.item.item-transparent {
+	border-color: #0a9ec7;
+	background-color: transparent;
+	color: #000000;
+}
+
+.item-complex.item-transparent > .item-content {
+	border-color: #0a9ec7;
+	background-color: transparent;
+	color: #000000;
+}

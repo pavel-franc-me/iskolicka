@@ -1,0 +1,12 @@
+//
+   Created by pavel on 17.03.15.
+
+ion-view(view-title='Seznam lekcí')
+  ion-nav-buttons
+    button.button(ng-click="goLogin()") Přihlášení
+  ion-content(padding='true').back-pict
+    ion-list.list
+      ion-item.item-transparent.item-icon-right.item-icon-left(ng-repeat='item in items' href='#/tab/lesson/{{item.index}}' ng-click='selectLesson(item.index)')
+        i.icon.ion-ios7-email
+        h2 {{item.text}}
+        i.icon.ion-chevron-right.icon-accessory

@@ -1,0 +1,32 @@
+//
+   Created by pavel on 16.03.15.
+
+ion-view(title="Test")
+  ion-nav-buttons
+    button.button(ng-controller="BackCtrl" ng-click="goBack()") Seznam lekci
+
+  ion-content.padding
+
+    .button-bar
+      a.button.icon-left.ion-chevron-left.button-energized(ng-click="lesson.previous()" ng-disabled="lesson.isFirst()") Předchozí
+      a.button.icon-right.ion-chevron-right.button-energized(ng-click="lesson.next()" ng-disabled="lesson.isLast()") Následující
+
+    .row
+      .col
+        .h3.text-center Cvičení
+      .col
+        h2.text-center
+          a.text-green.ion-happy-outline(ng-show="lesson.isCorrect()")
+          a.text-red.ion-sad-outline(ng-show="!lesson.isCorrect()")
+
+
+
+    //
+      i.ion-happy-outline
+
+    label.item.item-input
+      span.input-label Česky
+      span.input-label {{lesson.getCurrent()}}
+    label.item.item-input
+      span.input-label Anglicky
+      input(type="text" placeholder="Zadej překlad" ng-model="lesson.result")

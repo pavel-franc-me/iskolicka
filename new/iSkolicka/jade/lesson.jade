@@ -1,0 +1,11 @@
+//
+   Created by pavel on 17.03.15.
+
+ion-view(view-title="Lekce {{name}}")
+  ion-nav-buttons
+    button.button(ng-controller="BackCtrl" ng-click="goBack()") Seznam lekci
+  ion-content(padding='true').back-pict
+    ion-list.list
+      ion-item.item-transparent(ng-repeat='item in items')
+        .left-text.no-wrap {{item.cz}}
+        .left-right.no-wrap {{item.en}}

@@ -1,0 +1,17 @@
+//
+   Created by pavel on 16.03.15.
+
+ion-view(title="Přihlášení")
+  ion-content(padding="true" ng-show="user.loggedUser")
+    h3
+      | Přihlášen uživatel:
+      span.no-wrap {{user.loggedUser}}
+    button.button.button-block.button-assertive(ng-click="logout()") Odhlásit se
+    button.button.button-block.button-calm(ng-click="lessons()") Jdi na lekce
+
+  ion-content(padding='true' ng-show="!user.loggedUser")
+    h3 Přihlásit se
+    label.item.item-input
+      span.input-label Jméno
+      input(type="text" placeholder="Zadej svoje jméno" ng-model="user.userToLog")
+    button.button.button-block.button-calm(ng-click='logUser()'  ng-disabled="!user.userToLog") Přihlásit se
