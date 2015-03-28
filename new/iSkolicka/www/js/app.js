@@ -39,7 +39,6 @@ app.controller('LoginCtrl', function($scope, $location) {
 		$scope.user.loggedUser =  localStorage.loggedUser;
 
 		$scope.logout = function() {
-			console.log('Logout' + $scope.loggedUser);
 			$scope.user.loggedUser = '';
 			$scope.user.userToLog = '';
 			localStorage.loggedUser = '';
@@ -80,11 +79,8 @@ app.controller('BackCtrl', function($scope, $state, $ionicActionSheet, LessonSta
 
 app.controller('LessonCtrl', function ($scope, $stateParams, LessonState) {
 
-		$scope.name = $stateParams.lessonId;
-
-		LessonState.getData(function(data) {
-			$scope.items = data;
-		});
+		$scope.name = $stateParams.id;
+		$scope.items = LessonState.getData();
 	}
 );
 
@@ -98,7 +94,12 @@ app.controller('LessonsListCtrl', function($scope, $state, Lesson, LessonState) 
 		};
 
 		$scope.selectLesson = function(id) {
-			LessonState.loadData(id);
+			LessonState.loadData(id, function(data) {
+				$state.go('tab.lesson', {
+					id : id
+				});
+			});
+
 		}
 	}
 );
@@ -146,7 +147,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 			templateUrl: "tabs.html"
 		})
 		.state('tab.lesson', {
-			url        : '/lesson/:lessonId',
+			url        : '/lesson/:id',
 			views : {
 				'tab-lesson' : {
 					templateUrl: 'lesson.html',

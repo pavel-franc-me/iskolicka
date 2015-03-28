@@ -75,7 +75,6 @@
 		var lessonId = -1;
 		var noOfHits = -1;
 		var data = [];
-		var dataOrder = $q.defer();
 
 		var reset = function() {
 			lessonId = -1;
@@ -123,22 +122,18 @@
 
 		return {
 
-			loadData: function (newLessonId) {
+			loadData: function (newLessonId, callback) {
 				reset();
-				dataOrder = $q.defer();
 
 				Lesson.get(newLessonId, function (newData) {
 					setData(newData, newLessonId);
-					dataOrder.resolve(data);
-				});
-			},
-
-			getData: function (callback) {
-				dataOrder.promise.then(function () {
 					callback(data);
 				});
 			},
 
+			getData: function() {
+				return data;
+			},
 
 			id: function () {
 				return lessonId;
