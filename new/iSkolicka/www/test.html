@@ -1,0 +1,29 @@
+
+<!--
+Created by pavel on 16.03.15.
+
+-->
+<ion-view title="Test">
+  <ion-nav-buttons>
+    <button ng-controller="BackCtrl" ng-click="goBack()" class="button">Seznam lekci</button>
+  </ion-nav-buttons>
+  <ion-content class="padding">
+    <div class="button-bar"><a ng-click="lesson.previous()" ng-disabled="lesson.isFirst()" class="button icon-left ion-chevron-left button-energized">Předchozí</a><a ng-click="lesson.next()" ng-disabled="lesson.isLast()" class="button icon-right ion-chevron-right button-energized">Následující</a></div>
+    <div class="row">
+      <div class="col">
+        <div class="h3 text-center">Cvičení</div>
+      </div>
+      <div class="col">
+        <h2 class="text-center"><a ng-show="lesson.isCorrect()" class="text-green ion-happy-outline"></a><a ng-show="!lesson.isCorrect()" class="text-red ion-sad-outline"></a></h2>
+      </div>
+    </div>
+    <!--
+    i.ion-happy-outline
+    
+    -->
+    <label class="item item-input"><span class="input-label">Česky</span><span class="input-label">{{lesson.getCurrent()}}</span></label>
+    <label class="item item-input"><span class="input-label">Anglicky</span>
+      <input type="text" placeholder="Zadej překlad" ng-model="lesson.result"/>
+    </label>
+  </ion-content>
+</ion-view>

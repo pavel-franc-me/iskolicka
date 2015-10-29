@@ -1,0 +1,21 @@
+
+<!--
+Created by pavel on 17.03.15.
+
+-->
+<ion-view title="Výsledky">
+  <ion-nav-buttons>
+    <button ng-controller="BackCtrl" ng-click="goBack()" class="button">Seznam lekci</button>
+  </ion-nav-buttons>
+  <ion-content class="padding">
+    <h3 class="text-center">Výsledky</h3>
+    <div class="list">
+      <div class="a item">Celkem<span class="badge badge-calm">{{lessonState.totalTotal()}}</span></div>
+      <div class="a item">Správně<span class="badge badge-balanced">{{lessonState.totalCorrect()}}</span></div>
+      <div class="a item">Špatně<span class="badge badge-assertive">{{lessonState.totalError()}}</span></div>
+      <div class="a item">Nevyplněno<span class="badge badge-energized">{{lessonState.totalEmpty()}}</span></div>
+      <div class="a item">Počet Nápověd<span class="badge badge-dark">{{lessonState.totallHints()}}</span></div>
+    </div>
+    <button class="button button-block button-assertive">Odeslat</button>
+  </ion-content>
+</ion-view>

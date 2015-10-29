@@ -1,0 +1,18 @@
+
+<!--
+Created by pavel on 17.03.15.
+
+-->
+<ion-view view-title="Lekce {{name}}">
+  <ion-nav-buttons>
+    <button ng-controller="BackCtrl" ng-click="goBack()" class="button">Seznam lekci</button>
+  </ion-nav-buttons>
+  <ion-content padding="true" class="back-pict">
+    <ion-list class="list">
+      <ion-item ng-repeat="item in items" class="item-transparent">
+        <div class="left-text no-wrap">{{item.cz}}</div>
+        <div class="left-right no-wrap">{{item.en}}</div>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,17 @@
+
+<!--
+Created by pavel on 17.03.15.
+
+-->
+<ion-view view-title="Seznam lekcí">
+  <ion-nav-buttons>
+    <button ng-click="goLogin()" class="button">Přihlášení</button>
+  </ion-nav-buttons>
+  <ion-content padding="true" class="back-pict">
+    <ion-list class="list">
+      <ion-item ng-repeat="item in items" ng-click="selectLesson(item.index)" class="item-transparent item-icon-right item-icon-left"><i class="icon ion-ios7-email"></i>
+        <h2>{{item.text}}</h2><i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

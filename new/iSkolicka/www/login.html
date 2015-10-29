@@ -1,0 +1,19 @@
+
+<!--
+Created by pavel on 16.03.15.
+
+-->
+<ion-view title="Přihlášení">
+  <ion-content padding="true" ng-show="user.loggedUser">
+    <h3>Přihlášen uživatel:<span class="no-wrap">{{user.loggedUser}}</span></h3>
+    <button ng-click="logout()" class="button button-block button-assertive">Odhlásit se</button>
+    <button ng-click="lessons()" class="button button-block button-calm">Jdi na lekce</button>
+  </ion-content>
+  <ion-content padding="true" ng-show="!user.loggedUser">
+    <h3>Přihlásit se</h3>
+    <label class="item item-input"><span class="input-label">Jméno</span>
+      <input type="text" placeholder="Zadej svoje jméno" ng-model="user.userToLog"/>
+    </label>
+    <button ng-click="logUser()" ng-disabled="!user.userToLog" class="button button-block button-calm">Přihlásit se</button>
+  </ion-content>
+</ion-view>
