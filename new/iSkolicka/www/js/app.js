@@ -80,7 +80,10 @@ app.controller('BackCtrl', function($scope, $state, $ionicActionSheet, LessonSta
 app.controller('LessonCtrl', function ($scope, $stateParams, LessonState) {
 
 		$scope.name = $stateParams.id;
-		$scope.items = LessonState.getData();
+		LessonState.loadData($stateParams.id, function(data) {
+			$scope.items = data;
+		});
+		//LessonState.getData();
 	}
 );
 
