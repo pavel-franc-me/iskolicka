@@ -6,8 +6,11 @@
 
 	var module = angular.module('lesson', ['ionic']);
 
-	var lesssonListUrl = 'http://mobile.iskolicka.cz/script/lesson';
-	var lessonUrl = 'http://mobile.iskolicka.cz/script/dictionary/';
+	//var lesssonListUrl = 'http://mobile.iskolicka.cz/script/lesson';
+	//var lessonUrl = 'http://mobile.iskolicka.cz/script/dictionary/';
+	var lesssonListUrl = 'http://mobile.online-english.cz/script/lesson';
+	var lessonUrl = 'http://mobile.online-english.cz/script/dictionary/';
+	//var xx = 'mobile.online-english.cz';
 
 	/**
 	 * Service Lesson is ised to cumunicate with server to load lesson list and
