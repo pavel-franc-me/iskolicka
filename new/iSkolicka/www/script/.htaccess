@@ -1,0 +1,5 @@
+RewriteEngine On
+
+RewriteRule     ^lesson$  									ajaxScript.php [L]
+RewriteRule     ^dictionary/(.*)  							ajaxScript.php?id=$1&action=dictionary [L]
+RewriteRule     ^lesson/(.*)  								ajaxScript.php?id=$1&action=detail [L]
