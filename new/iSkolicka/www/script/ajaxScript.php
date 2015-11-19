@@ -30,7 +30,7 @@ elseif(isset($_GET["id"])&&$_GET["action"]=="dictionary")
 }
 else
 {
-    $rs = mysql_query("select * from english_podcast where upper>1 and user=3 order by upper desc, kod desc");
+    $rs = mysql_query("select distinct p.kod,p.name from english_podcast p, english_dictionary_user d where p.kod=d.document and p.upper>1 and p.user=3 order by p.upper desc, p.kod desc");
     while($z = mysql_fetch_array($rs))
     {
         $text[] = array("firstName"=>$z["kod"],"lastName"=>$z["name"]);

@@ -6,11 +6,10 @@
 
 	var module = angular.module('lesson', ['ionic']);
 
-	//var lesssonListUrl = 'http://mobile.iskolicka.cz/script/lesson';
-	//var lessonUrl = 'http://mobile.iskolicka.cz/script/dictionary/';
 	var lesssonListUrl = 'http://mobile.online-english.cz/script/lesson';
 	var lessonUrl = 'http://mobile.online-english.cz/script/dictionary/';
-	//var xx = 'mobile.online-english.cz';
+    //var lesssonListUrl = 'script/lesson';
+    //var lessonUrl = 'script/dictionary/';
 
 	/**
 	 * Service Lesson is ised to cumunicate with server to load lesson list and
@@ -33,9 +32,8 @@
 							return parseInt(a.firstName) - parseInt(b.firstName);
 						});
 						data.forEach(function (x) {
-							var item = x.firstName + ' - ' + x.lastName;
 							var rec = {
-								text : item,
+								text : x.lastName,
 								index: x.firstName
 							};
 							items.push(rec);
