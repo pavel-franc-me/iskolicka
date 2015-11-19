@@ -5,7 +5,6 @@
 (function closure() {
 
 	var module = angular.module('lesson', ['ionic']);
-
 	var lesssonListUrl = 'http://mobile.online-english.cz/script/lesson';
 	var lessonUrl = 'http://mobile.online-english.cz/script/dictionary/';
     //var lesssonListUrl = 'script/lesson';

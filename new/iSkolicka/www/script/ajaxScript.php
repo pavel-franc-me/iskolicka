@@ -17,7 +17,6 @@ if(isset($_GET["id"])&&$_GET["action"]=="detail")
     $rs = mysql_query("select * from english_podcast where kod=".$_GET["id"]);
     $z = mysql_fetch_array($rs);
     $result = $z["text"];
-
 }
 elseif(isset($_GET["id"])&&$_GET["action"]=="dictionary")
 {
