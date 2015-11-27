@@ -11,7 +11,7 @@ Created by pavel on 17.03.15.
     <ion-list class="list">
       <ion-item ng-repeat="item in items" class="item-transparent">
         <div class="left-text no-wrap">{{item.cz}}</div>
-        <div class="left-right no-wrap">{{item.en}}</div>
+        <div class="right-text no-wrap" ng-click="sayIt(item.en)"><a class="ion-headphone">&nbsp;</a>{{item.en}}</div>
       </ion-item>
     </ion-list>
   </ion-content>

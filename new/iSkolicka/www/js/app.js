@@ -34,24 +34,24 @@ app.run(function ($ionicPlatform) {
 	});
 });
 
-app.controller('LoginCtrl', function($scope, $location) {
+app.controller('LoginCtrl', function ($scope, $location) {
 		$scope.user = {};
-		$scope.user.loggedUser =  localStorage.loggedUser;
+		$scope.user.loggedUser = localStorage.loggedUser;
 
-		$scope.logout = function() {
+		$scope.logout = function () {
 			$scope.user.loggedUser = '';
 			$scope.user.userToLog = '';
 			localStorage.loggedUser = '';
 		};
 
-		$scope.lessons = function() {
+		$scope.lessons = function () {
 			$location.path('/lessons');
 		};
 
 		$scope.user.userToLog = '';
 
-		$scope.logUser = function() {
-			if($scope.user.userToLog) {
+		$scope.logUser = function () {
+			if ($scope.user.userToLog) {
 				$scope.user.loggedUser = $scope.user.userToLog;
 				localStorage.loggedUser = $scope.user.userToLog;
 			}
@@ -59,13 +59,13 @@ app.controller('LoginCtrl', function($scope, $location) {
 	}
 );
 
-app.controller('BackCtrl', function($scope, $state, $ionicActionSheet, LessonState) {
+app.controller('BackCtrl', function ($scope, $state, $ionicActionSheet, LessonState) {
 		$scope.goBack = function () {
-			if(LessonState.totalCorrect() > 0) {
+			if (LessonState.totalCorrect() > 0) {
 				$ionicActionSheet.show({
-					titleText               : 'Pokud se vrátite, přijdete o vyplněná slovíčka',
-					destructiveText         : 'Zpět na seznam',
-					cancelText              : 'Zrušit',
+					titleText: 'Pokud se vrátite, přijdete o vyplněná slovíčka',
+					destructiveText: 'Zpět na seznam',
+					cancelText: 'Zrušit',
 					destructiveButtonClicked: function () {
 						$state.go('lessonsList');
 					}
@@ -79,27 +79,53 @@ app.controller('BackCtrl', function($scope, $state, $ionicActionSheet, LessonSta
 
 app.controller('LessonCtrl', function ($scope, $stateParams, LessonState) {
 
-		$scope.name = $stateParams.id;
-		LessonState.loadData($stateParams.id, function(data) {
+		var inSpeach = false;
+
+		$scope.name = $stateParams.name;
+		LessonState.loadData($stateParams.id, function (data) {
 			$scope.items = data;
 		});
-		//LessonState.getData();
+		$scope.sayIt = function (text) {
+			if(inSpeach)
+				return;
+			text = text.trim();
+
+			responsiveVoice.speak(text, 'US English Female', {
+				onstart: function () {
+					inSpeach = true;
+					console.log('Starting speach');
+					console.log('Say word ' + text);
+				},
+				onend: function () {
+					inSpeach = false;
+					console.log('Stoping sppech');
+				}
+			});
+		};
 	}
 );
 
-app.controller('LessonsListCtrl', function($scope, $state, Lesson, LessonState) {
+app.controller('LessonsListCtrl', function ($scope, $state, Lesson, LessonState) {
 
-		Lesson.list(function(data) {
+		var isLoading = false;
+
+		Lesson.list(function (data) {
 			$scope.items = data;
 		});
-		$scope.goLogin = function() {
+		$scope.goLogin = function () {
 			$state.go('login');
 		};
 
-		$scope.selectLesson = function(id) {
-			LessonState.loadData(id, function(data) {
+		$scope.selectLesson = function (id) {
+			if (isLoading) {
+				console.log('Double load');
+				return;
+			}
+			isLoading = true;
+			LessonState.loadData(id, function (data) {
+				isLoading = false;
 				$state.go('tab.lesson', {
-					id : id
+					id: id
 				});
 			});
 
@@ -107,13 +133,12 @@ app.controller('LessonsListCtrl', function($scope, $state, Lesson, LessonState) 
 	}
 );
 
-app.controller('TestCtrl', function($scope, LessonState) {
+app.controller('TestCtrl', function ($scope, LessonState) {
 
 	$scope.lesson = LessonState;
-
 });
 
-app.controller('ResultsCtrl', function($scope, LessonState) {
+app.controller('ResultsCtrl', function ($scope, LessonState) {
 
 	$scope.lessonState = LessonState;
 
@@ -127,20 +152,20 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 	// Each state's controller can be found in controllers.js
 	$stateProvider
 
-		// Each tab has its own nav history stack:
-		//.state('index', {
-		//	url: "/",
-		//	abstract : true,
-		//	templateUrl: "index.html",
-		//	controller: 'TadoCtrl'
-		//})
+	// Each tab has its own nav history stack:
+	//.state('index', {
+	//	url: "/",
+	//	abstract : true,
+	//	templateUrl: "index.html",
+	//	controller: 'TadoCtrl'
+	//})
 		.state('login', {
-			url:    '/login',
+			url: '/login',
 			templateUrl: 'login.html',
 			controller: 'LoginCtrl'
 		})
 		.state('lessonsList', {
-			url : '/lessons',
+			url: '/lessons',
 			templateUrl: 'lessonList.html',
 			controller: 'LessonsListCtrl'
 		})
@@ -150,32 +175,32 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 			templateUrl: "tabs.html"
 		})
 		.state('tab.lesson', {
-			url        : '/lesson/:id',
-			views : {
-				'tab-lesson' : {
+			url: '/lesson/:id',
+			views: {
+				'tab-lesson': {
 					templateUrl: 'lesson.html',
-					controller : 'LessonCtrl'
+					controller: 'LessonCtrl'
 				}
 			},
-			onEnter: function(LessonState) {
+			onEnter: function (LessonState) {
 				LessonState.addHint();
 			}
 		})
 		.state('tab.test', {
-			url        : '/test',
+			url: '/test',
 			views: {
-				'tab-test' : {
+				'tab-test': {
 					templateUrl: 'test.html',
-					controller : 'TestCtrl'
+					controller: 'TestCtrl'
 				}
 			}
 		})
 		.state('tab.results', {
-			url        : '/results',
+			url: '/results',
 			views: {
-				'tab-results' : {
+				'tab-results': {
 					templateUrl: 'results.html',
-					controller : 'ResultsCtrl'
+					controller: 'ResultsCtrl'
 				}
 			}
 		})
