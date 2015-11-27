@@ -79,11 +79,29 @@ app.controller('BackCtrl', function ($scope, $state, $ionicActionSheet, LessonSt
 
 app.controller('LessonCtrl', function ($scope, $stateParams, LessonState) {
 
+		var inSpeach = false;
+
 		$scope.name = $stateParams.name;
 		LessonState.loadData($stateParams.id, function (data) {
 			$scope.items = data;
 		});
-		//LessonState.getData();
+		$scope.sayIt = function (text) {
+			if(inSpeach)
+				return;
+			text = text.trim();
+
+			responsiveVoice.speak(text, 'US English Female', {
+				onstart: function () {
+					inSpeach = true;
+					console.log('Starting speach');
+					console.log('Say word ' + text);
+				},
+				onend: function () {
+					inSpeach = false;
+					console.log('Stoping sppech');
+				}
+			});
+		};
 	}
 );
 
@@ -99,7 +117,7 @@ app.controller('LessonsListCtrl', function ($scope, $state, Lesson, LessonState)
 		};
 
 		$scope.selectLesson = function (id) {
-			if(isLoading) {
+			if (isLoading) {
 				console.log('Double load');
 				return;
 			}
@@ -118,14 +136,6 @@ app.controller('LessonsListCtrl', function ($scope, $state, Lesson, LessonState)
 app.controller('TestCtrl', function ($scope, LessonState) {
 
 	$scope.lesson = LessonState;
-	$scope.sayIt = function() {
-		if($scope.lesson.result) {
-			var speech =  $scope.lesson.result;
-			speech = speech.trim();
-			responsiveVoice.speak(speech);
-			console.log('Say to ' + speech);
-		}
-	}
 });
 
 app.controller('ResultsCtrl', function ($scope, LessonState) {
