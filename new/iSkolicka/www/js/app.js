@@ -11,26 +11,13 @@ app.run(function ($ionicPlatform) {
 	$ionicPlatform.ready(function () {
 		// Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
 		// for form inputs)
-		//var portail = false;
-		if (window.cordova && window.cordova.plugins.Keyboard) {
+		if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
 			cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+			cordova.plugins.Keyboard.disableScroll(true);
 		}
 		if (window.StatusBar) {
 			StatusBar.styleDefault();
 		}
-		//window.addEventListener('deviceorientation', function (event) {
-		//	if (window.innerHeight > window.innerWidth) {
-		//		if (!portail) {
-		//			portail = true;
-		//			console.log('Orientation portail');
-		//		}
-		//	} else {
-		//		if (portail) {
-		//			portail = false;
-		//			console.log('Orientation landscape');
-		//		}
-		//	}
-		//}, false);
 	});
 });
 
@@ -161,24 +148,24 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 	//})
 		.state('login', {
 			url: '/login',
-			templateUrl: 'login.html',
+			templateUrl: 'templates/login.html',
 			controller: 'LoginCtrl'
 		})
 		.state('lessonsList', {
 			url: '/lessons',
-			templateUrl: 'lessonList.html',
+			templateUrl: 'templates/lessonList.html',
 			controller: 'LessonsListCtrl'
 		})
 		.state('tab', {
 			url: "/tab",
 			abstract: true,
-			templateUrl: "tabs.html"
+			templateUrl: "templates/tabs.html"
 		})
 		.state('tab.lesson', {
 			url: '/lesson/:id',
 			views: {
 				'tab-lesson': {
-					templateUrl: 'lesson.html',
+					templateUrl: 'templates/lesson.html',
 					controller: 'LessonCtrl'
 				}
 			},
@@ -190,7 +177,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 			url: '/test',
 			views: {
 				'tab-test': {
-					templateUrl: 'test.html',
+					templateUrl: 'templates/test.html',
 					controller: 'TestCtrl'
 				}
 			}
@@ -199,7 +186,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 			url: '/results',
 			views: {
 				'tab-results': {
-					templateUrl: 'results.html',
+					templateUrl: 'templates/results.html',
 					controller: 'ResultsCtrl'
 				}
 			}
