@@ -28,7 +28,7 @@
 					.success(function(data, status, headers, config) {
 						var items = [];
 						data.sort(function (a, b) {
-							return parseInt(a.firstName) - parseInt(b.firstName);
+							return parseInt(b.firstName) - parseInt(a.firstName);
 						});
 						data.forEach(function (x) {
 							var rec = {
@@ -52,6 +52,9 @@
 			get : function (id, callback) {
 				$http.get(lessonUrl + id)
 					.success(function (data, status, headers, config) {
+						data.sort(function(a, b) {
+							return parseInt(a.id) - parseInt(b.id);
+						});
 						var items = [];
 						if (data !== 'null') {
 							data.forEach(function (x) {
